@@ -4,11 +4,7 @@
 #>
 
 #Variables
-Set-Variable -name "EmptyRB" Clear-RecycleBin
 
-function-{
-
-}
 
 Add-Type -AssemblyName System.Windows.Forms
 [System.Windows.Forms.Application]::EnableVisualStyles()
