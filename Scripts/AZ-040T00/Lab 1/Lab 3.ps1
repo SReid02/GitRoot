@@ -40,8 +40,26 @@ Get-HotFix |
 get-command *dhcp*
 
 #TASK 4 Firewalls
+Get-Command *rule* 
+Get-NetFirewallRule
+get-help Get-NetFirewallRule -ShowWindow #ask QNS about this
+Get-NetFirewallRule -Enabled True #we are checking the porperty if it true or false
+Get-NetFirewallRule | Get-Member #incorrect
+Get-NetFirewallRule -Enabled True | Format-Table -Wrap #didnt understand the warp property
+Get-NetFirewallRule -Enabled True | Get-Member #used this to find the properties then select the object properties 
+Get-NetFirewallRule -Enabled True | Sort-Object -Property Name,Profile,Direction,EnforementStatus #took a guess at allow and deny I was also supposed to select-object
+Get-NetFirewallRule -Enabled True | Select-Object -Property Name,Profile,Direction,Action
+Get-NetFirewallRule -Enabled True | Select-Object -Property Name,Profile,Direction,Action | Sort-Object -Property Profile,Displayname | Format-Table #Review -Groupby Profile
+#Review Sorting Objects and selecting objects. Understand your just piping in from finding the command a select list of properties.
+
 
 #TASK 5
+Get-Command *neighbor*
+Get-NetNeighbor
+get-help Get-NetNeighbor -ShowWindow
+Get-NetNeighbor #ask why your doing this twice
+Get-NetNeighbor |Sort-Object -Property State #getting a property from anycommand other then AD 
+Get-NetNeighbor | Sort-Object -Property State | Select-Object
 
 #TASk 6
 
