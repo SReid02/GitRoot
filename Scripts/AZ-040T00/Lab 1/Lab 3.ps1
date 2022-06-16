@@ -38,6 +38,12 @@ Get-HotFix |
 #TASK 3 DHCP
 
 get-command *dhcp*
+Get-Command *scope*
+Get-help *Get-DhcpServerv4Scope* -ShowWindow
+Get-DhcpServerv4Scope | Get-Member #wont work need a server name
+Get-DhcpServerv4Scope -ComputerName LON-DC1 #DHCP is installed on DC's
+Get-help Get-DhcpServerv4Scope -ShowWindow
+
 
 #TASK 4 Firewalls
 Get-Command *rule* 
