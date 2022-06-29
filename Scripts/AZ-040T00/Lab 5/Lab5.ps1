@@ -44,3 +44,25 @@ Get-Cimclass -NameSpace root\cimv2 | Where-Object {$_.CimClassName -like "*user*
 Get-CimInstance -ClassName Win32_UserAccount | 
       Select-Object -Property Caption,Domain,SID,FullName,Name | 
       ft
+
+#TASK 4 GROUP INFO
+Get-Cimclass -NameSpace root\cimv2 | Where-Object {$_.CimClassName -like "*group*"}
+Get-CimInstance -ClassName Win32_GroupUser | Get-Member
+Get-CimInstance -ClassName Win32_GroupUser -ComputerName LON-DC1
+
+#EXERCISE 3 Invoking Methods
+
+(Get-CimClass -ClassName Win32_Service).CimClassMethods
+Get-CimInstance -ClassName Win32_Service -ComputerName LON-DC1 | 
+        Where-Object {$_.Name -eq 'spooler'} |
+        Invoke-CimMethod  -ComputerName LON-DC1 -MethodName stopservice
+
+Enter-PSSession -ComputerName Lon-DC1 
+ Start-Service -name Spooler
+ get-service -Name Spooler
+ Exit-PSSession
+
+#TASK 2 (Used Answers)
+
+Get-WmiObject -Class Win32_Service -Filter "Name='WinRM'" | 
+        Invoke-WmiMethod -Name ChangeStartMode -Argument 'Automatic' 
