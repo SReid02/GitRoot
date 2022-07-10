@@ -103,11 +103,18 @@ $Allusers = get-aduser -Filter * -Properties Name,DistinguishedName,Department,C
                 $NewPass = ConvertTo-SecureString $Password -AsPlainText -Force
                 Set-ADAccountPassword $user -NewPassword $NewPass -Reset
                 Set-aduser -Identity $user | #-ChangePasswordAtLogon $true
-                write-host $user,$Password  |
-                type 'C:\Scripts\NewPasswords.txt'
+                Write-Host $user, $Password  
     }
 
-
-
+    #below works 
+Foreach ($user in $AllUsers){
+                $Password = -join ((33..126) | 
+                Get-Random -Count 15|
+                ForEach-Object { [char]$_})
+                $NewPass = ConvertTo-SecureString $Password -AsPlainText -Force
+                Set-ADAccountPassword $user -NewPassword $NewPass -Reset
+                Set-aduser -Identity $user 
+                write-host $user, $Password
+    }
 
 
