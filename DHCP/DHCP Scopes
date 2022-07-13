@@ -1,0 +1,2 @@
+Add-DhcpServerv4Scope -Name "Lab-4 Network" -StartRange 10.10.10.1 -EndRange 10.10.10.254 -SubnetMask 255.255.255.0
+Set-DhcpServerv4OptionValue -ComputerName "dhcpserver.contoso.com" -DnsServer 192.168.1.2 -WinsServer 192.168.1.3 -DnsDomain "contoso.com" -Router 192.168.1.1 -Wpad "http://proxy.contoso.com/wpad.dat"

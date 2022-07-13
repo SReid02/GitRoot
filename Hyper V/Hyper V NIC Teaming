@@ -1,0 +1,1 @@
+New-NetLbfoTeam -Name "Team1" -TeamMembers "NIC1","NIC2" -TeamingMode LACP -LoadBalancingAlgorithm HyperVPort
