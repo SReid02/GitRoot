@@ -1,5 +1,5 @@
 Invoke-Command -ComputerName LON-SVR1 {Install-ADDSDomainController 
-    - NoGlobalCatalog:$true -Credential (Get-Credential) `
+    -NoGlobalCatalog:$true -Credential (Get-Credential) `
     -CriticalReplicationOnly:$false `
     - DatabasePath “C:\Windows\NTDS” `
     -DomainName “Adatum.com” -InstallDns:$false `

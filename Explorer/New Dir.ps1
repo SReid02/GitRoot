@@ -1,0 +1,1 @@
+New-Item c:\rmstemplates -ItemType Directory
