@@ -1,0 +1,2 @@
+#Get a list of az resoure groups as an example. * = if your using a naming convention etc and the first section is the same it will get all RG's that start with that.
+Get-AzResourceGroup -Name 'az104-06*'

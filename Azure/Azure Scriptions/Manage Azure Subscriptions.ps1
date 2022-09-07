@@ -1,0 +1,4 @@
+#
+Get-AzSubscriptionDeployment
+#
+Get-AzBatchSubscriptionQuotas

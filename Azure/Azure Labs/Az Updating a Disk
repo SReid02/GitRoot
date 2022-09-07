@@ -1,0 +1,4 @@
+#Variables can be swapped out for any disk name.
+New-AzDiskUpdateConfig -DiskSizeGB 64 | Update-AzDisk -ResourceGroupName $rgName -DiskName $diskName
+#ensureing changes took effect
+Get-AzDisk -ResourceGroupName $rgName -Name $diskName

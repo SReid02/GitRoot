@@ -1,0 +1,1 @@
+Get-AzDisk -ResourceGroupName $rgName -Name $diskName
