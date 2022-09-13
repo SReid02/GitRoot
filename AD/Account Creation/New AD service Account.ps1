@@ -1,1 +1,0 @@
-New-ADServiceAccount -Name Webservice -DNSHostName LON-DC1 -PrincipalsAllowedToRetrieveManagedPassword LON-DC1$
